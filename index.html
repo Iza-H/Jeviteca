@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jeviteca</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+</head>
+<body ng-app="jevitecka">
+
+    <div class="container">
+        <header><h1>Jeviteca</h1></header>
+        <nav ng-controller="NavSelectedCtrl">
+            <ul class="nav nav-tabs">
+                <li role="presentation" ng-class = "{ 'active' : isAlbumSelected()}"><a href="#/albumes">Àlbumes</a></li>
+                <li role="presentation" ng-class = "{'active' : isBandasSelected()}"><a href="#/bandas">Bandas</a></li>
+                <li role="presentation" ng-class = "{'active' : isGenerosSelected()}"><a href="#/generos">Gèneros</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    //Controllers:
+    <script src="scripts/NavSelectedController.js"></script>
+    //Constants:
+    <script src="scripts/constants/properties.js"></script>
+</body>
+</html>
