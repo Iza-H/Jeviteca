@@ -1,7 +1,7 @@
 /**
  * Created by izabela on 14/11/15.
  */
-angular.module("jeviteca").directive("albumElement", function(AlbumsProvider){
+angular.module("jeviteca").directive("albumElement",  function(){
     return{
         restrict : "EA",
         templateUrl : "views/ElementoAlbum.html",
@@ -11,9 +11,12 @@ angular.module("jeviteca").directive("albumElement", function(AlbumsProvider){
             album : "=",
         },
 
-        link: function(scope, AlbumsProvider){
+        link: function(scope){
             scope.saveFavourite = function (){
-                AlbumsProvider.saveFavourite(scope.album.id, scope.album.favourite);
+                if (typeof (Storage)!=='unfifined'){
+                    localStorage.setItem("Album_" + scope.album.id, scope.album.favourite);
+                }
+
             }
 
 
