@@ -6,5 +6,5 @@
     <td>{{::album.band.name}}</td>
     <td>{{::album.genre.name}}</td>
     <td>{{::album.year}}</td>
-    <td><input ng-click="saveFavourite(album)" type="checkbox"/></td>
+    <td><input ng-click="saveFavourite(album)" type="checkbox" value={{::album.favourite}}/></td>
 </tr>

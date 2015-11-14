@@ -5,9 +5,23 @@ angular.module("jeviteca").controller("AlbumsCtrl", function($scope, Albums){
     $scope.albums = Albums.data;
 
 
-    $scope.addUrls = function() {
+    $scope.prepareDate = function() {
         for (var i= 0; i<$scope.albums.length; i++){
+            //change url
             $scope.albums[i].image = "resources/img/"+ $scope.albums[i].image;
+            $scope.albums[i].genreName = $scope.albums[i].genre.name;
+
+            //set favourite
+            if (typeof (Storage)!=='unfifined'){
+                if (localStorage.getItem("Album_" + $scope.albums[i].id)){
+                    $scope.albums[i].favourite = localStorage.getItem("Album_" + $scope.albums[i].id);
+                }else{
+                    $scope.albums[i].favourite = false;
+                }
+            }else {
+                $scope.albums[i].favourite = false;
+            }
+
         }
     };
 

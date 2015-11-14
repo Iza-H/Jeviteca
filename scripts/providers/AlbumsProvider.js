@@ -8,9 +8,12 @@ angular.module("jeviteca").service("AlbumsProvider", function($http){
 
     },
 
-    this.saveFavourite = function (album, value){
+    this.saveValueFavourite = function (album, value){
+        alert("TEST")
+        debugger;
         if (typeof (Storage)!=='unfifined'){
             localStorage.setItem("Album_" + album.id, value);
+            debugger;
         }
 
     }

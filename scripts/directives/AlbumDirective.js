@@ -1,7 +1,7 @@
 /**
  * Created by izabela on 14/11/15.
  */
-angular.module("jeviteca").directive("albumElement", function(){
+angular.module("jeviteca").directive("albumElement", function(AlbumsProvider){
     return{
         restrict : "EA",
         templateUrl : "views/ElementoAlbum.html",
@@ -9,13 +9,11 @@ angular.module("jeviteca").directive("albumElement", function(){
 
         scope:{
             album : "=",
-            valueFavourite : "=",
         },
 
         link: function(scope, AlbumsProvider){
             scope.saveFavourite = function (){
-                debugger;
-                AlbumsProvider.saveFavourite(scope.album.id, scope.valueFavourite);
+                AlbumsProvider.saveFavourite(scope.album.id, scope.album.favourite);
             }
 
 
