@@ -4,7 +4,7 @@
 //set of the module:
 var jeviteca = angular.module("jeviteca", ['ngRoute']);
 
-jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider) {
+jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider, BandsProvider, GeneresProvider) {
         $routeProvider.
             when('/albums', {
                 templateUrl: 'views/Albums.html',
@@ -18,21 +18,21 @@ jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider) {
             }).
             when('/bands',{
                 templateUrl: 'views/Bands.html',
-                controller: 'BandsCtrl'
-                /*resolve:{
+                controller: 'BandsCtrl',
+                resolve:{
                     Bands:["BandsProvider", function(BandsProvider){
                         return BandsProvider.getBrands();
                     }]
-                }*/
+                }
             }).
             when('/genres',{
                 templateUrl: 'views/Genres.html',
-                controller: 'GenresCtrl'
-                /*resolve:{
+                controller: 'GenresCtrl',
+                resolve:{
                     Genres:["GenresProvider", function(GenresProvider){
                         return GenresProvider.getGenres();
                     }]
-                }*/
+                }
 
             }).
             otherwise({
