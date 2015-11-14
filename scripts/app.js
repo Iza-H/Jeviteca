@@ -4,14 +4,14 @@
 //set of the module:
 var jeviteca = angular.module("jeviteca", ['ngRoute']);
 
-jeviteca.config(['$routeProvider', function($routeProvider, $http) {
+jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider) {
         $routeProvider.
             when('/albums', {
                 templateUrl: 'views/Albums.html',
                 controller: 'AlbumsCtrl',
                 resolve:{
-                    Albums: ['$http', function($http){
-                     return $http.get("resources/data" + "/albums.json");
+                    Albums: ['AlbumsProvider', function(AlbumsProvider){
+                     return AlbumsProvider.getAlbums();
                      }]
 
                 }
