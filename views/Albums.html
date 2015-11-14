@@ -1,4 +1,4 @@
-<div>
+<div class="container">
     <h2>Àlbumes</h2>
 
     <form class="form-inline">
@@ -8,7 +8,7 @@
         </div>
         <div class="form-group">
             <label class="sr-only">Brand</label>
-            <input type="text" class="form-control"  placeholder="Brand" ng-model="BrandFilter">
+            <input type="text" class="form-control"  placeholder="Brand" ng-model="BrandFilter" >
         </div>
         <input type="text" class="form-control" name="Género" placeholder="Género" ng-model="GeneroFilter">
         <datalist id="gerensList">
@@ -16,7 +16,7 @@
             <option value="Cambridge">
         </datalist>
         <div>
-            <label><input type="checkbox" ng-model="FavoutiteFilter"> Favorito</label>
+            <label><input type="checkbox" ng-model="FavoutiteFilter" ng-true-value="'true'" ng-false-value=""> Favoritos</label>
         </div>
     </form>
 

@@ -1,3 +1,11 @@
 <tr>
     <td>{{::band.name}}</td>
+    <td>{{::band.origin}}</td>
+    <td>
+        <div>
+            <ul>
+                <li ng-repeat="member in band.members">{{::member.name }}</li>
+            </ul>
+        </div>
+     </td>
 </tr>
