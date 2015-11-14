@@ -1,0 +1,9 @@
+<div>
+    <h2>Bandas</h2>
+    <table class="table">
+        <tr ng-repeat="band in bands | orderBy : 'name'"
+            band-element
+                band = "band"></tr>
+    </table>
+
+</div>

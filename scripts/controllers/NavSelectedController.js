@@ -7,12 +7,12 @@ angular.module("jeviteca").controller("NavSelectedCtrl", function($scope, $route
     $scope.isAlbumSelected = function(){
         return $route.current && $route.current.$$route.originalPath === "/albums";
     };
-    $scope.isBandasSelected = function(){
-        return $route.current && $route.current.$$route.originalPath === "/bandas";
+    $scope.isBandsSelected = function(){
+        return $route.current && $route.current.$$route.originalPath === "/bands";
 
     };
-    $scope.isGenerosSelected = function(){
-        return $route.current && $route.current.$$route.originalPath === "/generos";
+    $scope.isGenresSelected = function(){
+        return $route.current && $route.current.$$route.originalPath === "/genres";
     };
 
 });
