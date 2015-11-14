@@ -1,11 +1,22 @@
 <div>
     <h2>Àlbumes</h2>
     <table class="table">
-        <tr ng-repeat="album in albums | orderBy:'title'"
-                album-Element
-                album = "album">
-
+        <thead>
+        <tr>
+            <th>Imagen</th>
+            <th>Title</th>
+            <th>Brand</th>
+            <th>Género</th>
+            <th>Año</th>
+            <th>Favorito</th>
         </tr>
+        </thead>
+        <tbody ng-init="addUrls()">
+            <tr ng-repeat="album in albums | orderBy:'title'"
+                    album-Element
+                    album = "album">
 
+            </tr>
+        </tbody>
     </table>
 </div>

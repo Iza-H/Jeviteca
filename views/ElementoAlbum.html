@@ -1,5 +1,10 @@
 <tr>
+    <td>
+        <img ng-src="{{album.image}}" alt="Image" width="64">
+    </td>
     <td>{{::album.title}}</td>
+    <td>{{::album.band.name}}</td>
+    <td>{{::album.genre.name}}</td>
     <td>{{::album.year}}</td>
-    <td><input type="checkbox" value="false"/></td>
+    <td><input ng-click="saveFavourite(album)" type="checkbox"/></td>
 </tr>

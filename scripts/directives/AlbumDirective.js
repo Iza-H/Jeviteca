@@ -8,10 +8,16 @@ angular.module("jeviteca").directive("albumElement", function(){
 
 
         scope:{
-            album:"=",
+            album : "=",
+            valueFavourite : "=",
         },
 
-        link: function(scope){
+        link: function(scope, AlbumsProvider){
+            scope.saveFavourite = function (){
+                debugger;
+                AlbumsProvider.saveFavourite(scope.album.id, scope.valueFavourite);
+            }
+
 
         }
 

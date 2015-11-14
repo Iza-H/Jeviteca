@@ -12,6 +12,13 @@ jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider, Band
                 resolve:{
                     Albums: ['AlbumsProvider', function(AlbumsProvider){
                      return AlbumsProvider.getAlbums();
+                         /*.then(function successCallback(response) {
+
+                         for (var i = 0; i<response.data.length; i++){
+                             response.data[i].image = "resources/img"+response.data[i].image;
+                         }
+                         return response;
+                     })*/
                      }]
 
                 }
