@@ -1,14 +1,14 @@
 /**
  * Created by izabela on 14/11/15.
  */
-angular.module("jeviteca").controller("AlbumsCtrl", function($scope, $location, Albums){
+angular.module("jeviteca").controller("AlbumsCtrl", function($scope, $location, Properties, Albums){
     $scope.albums = Albums.data;
 
 
     $scope.prepareDate = function() {
         for (var i= 0; i<$scope.albums.length; i++){
             //change url
-            $scope.albums[i].image = "resources/img/"+ $scope.albums[i].image;
+            $scope.albums[i].image = Properties.resourcesImgUrl + $scope.albums[i].image;
             $scope.albums[i].genreName = $scope.albums[i].genre.name;
             $scope.albums[i].bandName = $scope.albums[i].band.name;
             //set favourite

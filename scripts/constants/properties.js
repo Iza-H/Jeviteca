@@ -3,6 +3,6 @@
  */
 
 angular.module("jeviteca").constant("Properties", {
-   resourcesDataUrl : "resources/data",
-   resourcesImgUrl : "resources/img"
+   resourcesDataUrl : "resources/data/",
+   resourcesImgUrl : "resources/img/"
 });

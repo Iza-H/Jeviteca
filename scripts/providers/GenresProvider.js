@@ -2,9 +2,9 @@
  * Created by izabela on 14/11/15.
  */
 
-angular.module("jeviteca").service("GenresProvider", function($http){
+angular.module("jeviteca").service("GenresProvider", function($http, Properties){
         this.getGenres = function () {
-                return $http.get("resources/data" + "/genres.json");
+                return $http.get(Properties.resourcesDataUrl + "genres.json");
         }
 
     }
