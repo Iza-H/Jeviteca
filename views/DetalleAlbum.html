@@ -1,5 +1,13 @@
-<article ng-init="takeOneAlbum()">
-    <h4>Album detalle</h4>
-    <p>{{album}}</p>
+<br ng-init="takeOneAlbum()">
+
+    <header><h4>{{::album.title}}</h4></header>
+    </br>
+    <p><strong>Id: </strong>{{::album.id}}</p>
+    <p><strong>Band: </strong>{{::album.band.name}}</p>
+    <p><strong>Género: </strong>{{::album.genre.name}}</p>
+    <p><strong>Tracklist: </strong></p>
+    <ul>
+        <li ng-repeat="tracklist in album.tracklist">{{::tracklist}}</li>
+    </ul>
 
 </article>
