@@ -1,4 +1,4 @@
-<br ng-init="takeOneAlbum()">
+<article ng-init="takeOneAlbum()" class="container">
 
     <header><h4>{{::album.title}}</h4></header>
     </br>
@@ -9,6 +9,7 @@
     <ul>
         <li ng-repeat="tracklist in album.tracklist">{{::tracklist}}</li>
     </ul>
-    <td><a href="{{album.wikiurl}}">Go to Wikipedia</a></td>
+    <a href="{{album.wikiurl}}" style="padding-bottom:20px">Go to Wikipedia</a>
+    </br>
 
 </article>
