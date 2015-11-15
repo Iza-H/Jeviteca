@@ -1,7 +1,25 @@
-<div>
+<div class = "container">
     <h2>Gèneros</h2>
-    <table class="table">
-        <tr ng-repeat="genre in genres | orderBy : 'name' "
+    <h2>Bandas</h2>
+    <form class="form-inline">
+        <div class="form-group">
+            <label class="sr-only">Name</label>
+            <input type="text" class="form-control" ng-model="NameFilter" placeholder="Name" >
+        </div>
+        <div class="form-group">
+            <label class="sr-only">Albums</label>
+            <input type="text" class="form-control"  placeholder="Albums" ng-model="AlbumsFilter">
+        </div>
+
+    </form>
+    <table class="table" ng-init="prepareData()">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Albums</th>
+        </tr>
+        </thead>
+        <tr ng-repeat="genre in genres | orderBy : 'name' | filter : {name : NameFilter } | filter : {albums :AlbumsFilter } "
             genre-Element
             genre = "genre">
 

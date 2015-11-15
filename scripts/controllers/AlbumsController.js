@@ -10,7 +10,7 @@ angular.module("jeviteca").controller("AlbumsCtrl", function($scope, Albums){
             //change url
             $scope.albums[i].image = "resources/img/"+ $scope.albums[i].image;
             $scope.albums[i].genreName = $scope.albums[i].genre.name;
-
+            $scope.albums[i].bandName = $scope.albums[i].band.name;
             //set favourite
             if (typeof (Storage)!=='unfifined'){
                 if (localStorage.getItem("Album_" + $scope.albums[i].id)){

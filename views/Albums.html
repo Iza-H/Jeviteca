@@ -32,7 +32,7 @@
         </tr>
         </thead>
         <tbody ng-init="prepareDate()">
-            <tr ng-repeat="album in albums | orderBy:'title' | filter : {title:TitleFilter} | filter : {genreName: GeneroFilter} | filter : {brandName: BrandFilter} | filter : {favourite: FavoutiteFilter}"
+            <tr ng-repeat="album in albums | orderBy:'title' | filter : {title:TitleFilter} | filter : {genreName: GeneroFilter} | filter : {bandName: BrandFilter} | filter : {favourite: FavoutiteFilter}"
                     album-Element
                     album = "album">
 
