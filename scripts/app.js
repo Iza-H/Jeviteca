@@ -4,7 +4,7 @@
 //set of the module:
 var jeviteca = angular.module("jeviteca", ['ngRoute']);
 
-jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider, BandsProvider, GeneresProvider) {
+jeviteca.config(['$routeProvider', function($routeProvider, $filter, AlbumsProvider, BandsProvider, GeneresProvider) {
         $routeProvider.
             when('/albums', {
                 templateUrl: 'views/Albums.html',
@@ -12,13 +12,6 @@ jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider, Band
                 resolve:{
                     Albums: ['AlbumsProvider', function(AlbumsProvider){
                      return AlbumsProvider.getAlbums();
-                         /*.then(function successCallback(response) {
-
-                         for (var i = 0; i<response.data.length; i++){
-                             response.data[i].image = "resources/img"+response.data[i].image;
-                         }
-                         return response;
-                     })*/
                      }]
 
                 }
@@ -42,7 +35,34 @@ jeviteca.config(['$routeProvider', function($routeProvider, AlbumsProvider, Band
                 }
 
             }).
+            when('/detallealbum/:idAlbum',{
+                templateUrl: 'views/DetalleAlbum.html',
+                controller: "DetalleAlbumCtrl",
+                resolve:{
+                    Albums: ['AlbumsProvider', function(AlbumsProvider){
+                        return AlbumsProvider.getAlbums();
+                    }],
+                    Id:[ "$route", function($route){
+                        debugger;
+                        return $route.current.params.idAlbum;
+                    }
+
+                    ]
+                    /*Albums:['AlbumsProvider', "$route","$filter", function(AlbumsProvider, $route, $filter){
+                        var albums = AlbumsProvider.getAlbums().then(function(result){
+                            var idAlbum =$route.current.params.idAlbum;
+                            resultado = $filter('filter')(result.data, {"id" : idAlbum})[0];
+                            return resultado;
+
+                        });
+
+
+
+                    }]*/
+                }
+
+            }).
             otherwise({
-                redirectTo: '/albumes'
+                redirectTo: '/albums'
             });
 }]);

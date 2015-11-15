@@ -2,7 +2,7 @@
     <td>
         <img ng-src="{{album.image}}" alt="Image" width="64">
     </td>
-    <td>{{::album.title}}</td>
+    <td><button class="btn-link" ng-click="titleClick()">{{::album.title}}</button></td>
     <td>{{::album.band.name}}</td>
     <td>{{::album.genre.name}}</td>
     <td>{{::album.year}}</td>

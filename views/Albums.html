@@ -34,7 +34,8 @@
         <tbody ng-init="prepareDate()">
             <tr ng-repeat="album in albums | orderBy:'title' | filter : {title:TitleFilter} | filter : {genreName: GeneroFilter} | filter : {bandName: BrandFilter} | filter : {favourite: FavoutiteFilter}"
                     album-Element
-                    album = "album">
+                    album = "album"
+                    on-title-click="showDetails(idAlbum)">
 
             </tr>
         </tbody>

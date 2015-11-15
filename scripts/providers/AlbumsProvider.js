@@ -8,9 +8,19 @@ angular.module("jeviteca").service("AlbumsProvider", function($http){
 
     }
 
+        $get:["$http", function($http){
+            return{
+                obtenerTodosLosAlbums:function(){
+                    return $http.get("resources/data" + "/albums.json")
+                },
+
+
+            };
+        }]
 
 
 
 
-}
+
+    }
 );

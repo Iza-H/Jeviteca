@@ -1,7 +1,7 @@
 /**
  * Created by izabela on 14/11/15.
  */
-angular.module("jeviteca").controller("AlbumsCtrl", function($scope, Albums){
+angular.module("jeviteca").controller("AlbumsCtrl", function($scope, $location, Albums){
     $scope.albums = Albums.data;
 
 
@@ -24,6 +24,11 @@ angular.module("jeviteca").controller("AlbumsCtrl", function($scope, Albums){
 
         }
     };
+
+
+    $scope.showDetails = function(idAlbum){
+        $location.path("/detallealbum/" + idAlbum);
+    }
 
 
 });

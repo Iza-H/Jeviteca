@@ -9,6 +9,7 @@ angular.module("jeviteca").directive("albumElement",  function(){
 
         scope:{
             album : "=",
+            onTitleClick : "&"
         },
 
         link: function(scope){
@@ -18,6 +19,9 @@ angular.module("jeviteca").directive("albumElement",  function(){
                 }
 
             }
+            scope.titleClick = function(){
+                scope.onTitleClick({idAlbum:scope.album.id}); //que enviamos fuera
+            };
 
 
         }
