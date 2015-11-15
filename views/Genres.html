@@ -1,6 +1,5 @@
 <div class = "container">
     <h2>Gèneros</h2>
-    <h2>Bandas</h2>
     <form class="form-inline">
         <div class="form-group">
             <label class="sr-only">Name</label>
@@ -19,7 +18,7 @@
             <th>Albums</th>
         </tr>
         </thead>
-        <tr ng-repeat="genre in genres | orderBy : 'name' | filter : {name : NameFilter } | filter : {albums :AlbumsFilter } "
+        <tr ng-repeat="genre in genres | orderBy : 'name' | filter : {name : NameFilter } | filter : {allAlbums :AlbumsFilter } "
             genre-Element
             genre = "genre">
 
