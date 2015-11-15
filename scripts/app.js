@@ -43,7 +43,6 @@ jeviteca.config(['$routeProvider', function($routeProvider, $filter, AlbumsProvi
                         return AlbumsProvider.getAlbums();
                     }],
                     Id:[ "$route", function($route){
-                        debugger;
                         return $route.current.params.idAlbum;
                     }
 

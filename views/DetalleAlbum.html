@@ -2,12 +2,13 @@
 
     <header><h4>{{::album.title}}</h4></header>
     </br>
-    <p><strong>Id: </strong>{{::album.id}}</p>
+    <img ng-src="{{album.image}}" alt="Image" width="264">
     <p><strong>Band: </strong>{{::album.band.name}}</p>
     <p><strong>Género: </strong>{{::album.genre.name}}</p>
     <p><strong>Tracklist: </strong></p>
     <ul>
         <li ng-repeat="tracklist in album.tracklist">{{::tracklist}}</li>
     </ul>
+    <td><a href="{{album.wikiurl}}">Go to Wikipedia</a></td>
 
 </article>
